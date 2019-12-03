@@ -1,19 +1,17 @@
-import React from 'react';
-import {Text, StyleSheet, View,Button,TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {Text,StyleSheet, View} from 'react-native';
 
-import SearchBar from '../components/SearchBar'
+import SearchBar from '../components/SearchBar';
 
-const SearchScreen = (props) => {
-  
-    return (
+const SearchScreen = props => {
+  const [term, setTerm] = useState(' ');
+  return (
     <View>
-        <SearchBar/>
-    
-    
-    </View>)
-}
-const styles= StyleSheet.create({
-  
-})
+      <SearchBar term={term} onTermChange={newTerm => setTerm(newTerm)}
+      onTermSumbit={null} />
+    </View>
+  );
+};
+const styles = StyleSheet.create({});
 
 export default SearchScreen;
