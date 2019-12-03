@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, StyleSheet, View, ScrollView} from 'react-native';
+import {Text, StyleSheet, ScrollView} from 'react-native';
 
 import SearchBar from '../components/SearchBar';
 import useResults from '../hooks/useResults';
@@ -22,7 +22,7 @@ const SearchScreen = () => {
         onTermChange={newTerm => setTerm(newTerm)}
         onTermSumbit={() => searchApi(term)}
       />
-    
+
       <Text>{error}</Text>
       <ScrollView>
         <ResultList
